@@ -1,9 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
+#include "libraries.h"
 #include "semaphore.h"
+#include "memory.h"
+#include "file.h"
 
 void print_usage_and_exit() {
   fprintf(stderr,
@@ -30,10 +28,13 @@ int main(int argc, char** argv) {
       print_usage_and_exit();
     }
     semaphore_create(value);
+    memory_create();
+    file_create();
   } else if (strncmp(opt, "-v", 2) == 0) {
     semaphore_view_value();
   } else if (strncmp(opt, "-r", 2) == 0) {
     semaphore_remove();
+    memory_remove();
   } else {
     print_usage_and_exit();
   }

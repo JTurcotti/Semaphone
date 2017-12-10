@@ -1,16 +1,7 @@
+#include "libraries.h"
 #include "semaphore.h"
-
-#include <errno.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-
-#include <sys/ipc.h>
-#include <sys/sem.h>
-#include <sys/types.h>
-
-#define SEM_KEY 24602
+#include "memory.h"
+#include "file.h"
 
 // The man page for semctl says we have to declare this ourselves.
 union semun {
