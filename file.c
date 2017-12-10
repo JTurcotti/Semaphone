@@ -10,7 +10,7 @@
 void file_create() {
   close(open(FILE_NAME, O_CREAT | O_TRUNC, 0644));
   
-  printf("Successfully created file.\n");
+  printf("Successfully created file with name %s.\n", FILE_NAME);
 }
 
 int file_open(int flags) {
